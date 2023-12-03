@@ -32,6 +32,9 @@ builder.Services.AddScoped<AuthDbSeeder>();
 
 //var app = builder.Build();
 
+builder.Services.AddCors(options => options.AddDefaultPolicy(
+	builder => builder.AllowAnyOrigin()));
+
 builder.Services.AddIdentity<StoreRestUser, IdentityRole>()
 	.AddEntityFrameworkStores<StoreDbContext>()
 	.AddDefaultTokenProviders();
@@ -372,6 +375,7 @@ itemGroup.MapDelete("items/{itemId:int}", [Authorize(Roles = StoreRoles.StoreUse
 
 //----------ITEM-----------
 
+app.UseCors();
 app.AddAuthApi();
 
 app.UseAuthentication();
