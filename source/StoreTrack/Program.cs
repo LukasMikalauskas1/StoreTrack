@@ -376,11 +376,12 @@ itemGroup.MapDelete("items/{itemId:int}", [Authorize(Roles = StoreRoles.StoreUse
 //----------ITEM-----------
 
 
-app.AddAuthApi();
+
 
 app.UseAuthentication();
 app.UseAuthorization();
 app.UseCors();
+app.AddAuthApi();
 using var scope = app.Services.CreateScope();
 
 var dbContext = scope.ServiceProvider.GetRequiredService<StoreDbContext>();
