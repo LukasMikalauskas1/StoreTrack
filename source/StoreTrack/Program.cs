@@ -33,7 +33,7 @@ builder.Services.AddScoped<AuthDbSeeder>();
 //var app = builder.Build();
 
 builder.Services.AddCors(options => options.AddDefaultPolicy(
-	builder => builder.AllowAnyOrigin()));
+	builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()));
 
 builder.Services.AddIdentity<StoreRestUser, IdentityRole>()
 	.AddEntityFrameworkStores<StoreDbContext>()
