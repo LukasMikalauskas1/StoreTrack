@@ -2,10 +2,10 @@
 {
 	public class SearchParameters
 	{
-		private int _pageSize = 2;
+		private int _pageSize = 400;
 		private int _pageNumber = 1;
 
-		private const int MaxPageSize = 50;
+		private const int MaxPageSize = 500;
 
 		public int? PageNumber
 		{
